@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página Pessoas</title>
+        <!--linkar o arquivo css-->
+        <link rel="stylesheet" href="style.css"> 
+
+        <!--arquivos pr validação-->
+        <script type="text/javascript" src="jQuery/jquery-3.5.1.min.js" ></script>
+        <script type="text/javascript" src="jQuery/jquery.validate.min.js"> </script>
+        <script type="text/javascript" src="jQuery/additional-methods.min.js"></script>
+        <script type="text/javascript" src="jQuery/localization/messages_pt_BR.min.js"></script>
+
+        <!--arquivo js/jQuery-->
+        <script type="text/javascript" src="js_jQuery.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.animacaoForm').fadeTo(0,0.0).fadeTo(15000,100)
+            })
+        </script>
+
+        <!--formatação de erro-->
+        <style>
+            .error{
+                color:red;
+                font-size: 11px;
+                font-style: italic;
+                border-top: none;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <header class="header-pags">
+            <nav class="header-menu-pags">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="animacaoForm"><!--FORMULARIO-->
+                <form id="peopleFormId" class="peopleFormClass">
+                    <h1>Informações Pessoais</h1>
+                    <label> CPF:
+                        <input type="text" id="IDcpf" name="NAMEcpf" placeholder="xxxxxxxxx-xx">
+                    </label> 
+                    
+                    <label> Nome Completo:
+                        <input type="text" id="IDnome"  name="NAMEnome" placeholder="digite seu nome completo">
+                    </label> 
+
+                    <label> Endereço:
+                        <input type="text" id="IDendereco"  name="NAMEend" placeholder="digite seu endereço">
+                    </label> 
+
+                    <label> Numero da casa:
+                        <input type="number" id="IDnroCasa"  name="NAMEnroCasa" placeholder="digite o numero da casa/apartamento">
+                    </label> 
+
+                    <label> CEP:
+                        <input type="text" id="IDcep"  name="NAMEcep" placeholder="xxxxx-xxx" >
+                    </label> 
+
+                    <label> E-mail:
+                        <input type="email" id="IDMail1"  name="NAMEmail1" placeholder="digite seu E-mail">
+                    </label> 
+
+                    <label> Outro E-mail:
+                        <input type="email" id="IDMail2"   name="NAMEmail2" placeholder="digite outro E-mail">
+                    </label> 
+
+                    <label> Telefone:
+                        <input type="number" id="IDtel1"  name="NAMEtel1" placeholder="(xx)xxxxx-xxxx" >
+                    </label> 
+
+                    <label> Outro telefone:
+                        <input type="number" id="IDtel2"  name="NAMEtel2" placeholder="(xx)xxxxx-xxxx" >
+                    </label> 
+
+                    <label> Data de nascimento:
+                        <input type="text" id="IDdate"  name="NAMEdata "placeholder="digite sua data de nascimento" data-mask="00/00/0000">
+                    </label> 
+
+                    <label> Profissão:
+                        <input type="text" id="IDprofissao"  name="NAMEprof" placeholder="digite sua profissão">
+                    </label> <br>
+                    
+                    <input id="btn-cadastrarPessoas" type="submit" value="Cadastrar">
+                    <input id="btn-alterarPessoas" type="button" value="Alterar" />
+                    <input id="btn-excluirPessoas" type="button" value="Excluir" />
+                    <input id="btn-mostrarPessoa" type="button" value="Mostrar Um" />
+                    <input type="button" id="btn-MostrarTodasPessoas" value="Mostrar Todos" />
+                </form>
+            </div>
+
+            <div> <!--TABELA-->
+                <table id="tablePeopleId" class="tablePeopleClass">
+                    
+                    <thead>
+                        <tr id="conteudoTheadPessoas">
+                        </tr>
+                    </thead>
+                    <tbody id="conteudoTbodyPessoas">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer class="rodape">
+            Copyright 2015
+        </footer>
+    </body>
+</html>

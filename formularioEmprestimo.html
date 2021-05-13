@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página Empréstimos</title>
+
+        <!--linkar o arquivo css-->
+        <link rel="stylesheet" href="style.css"> 
+
+        <!--arquivos pr validação-->
+        <script type="text/javascript" src="jQuery/jquery-3.5.1.min.js" ></script>
+        <script type="text/javascript" src="jQuery/jquery.validate.min.js"> </script>
+        <script type="text/javascript" src="jQuery/additional-methods.min.js"></script>
+        <script type="text/javascript" src="jQuery/localization/messages_pt_BR.min.js"></script>
+
+        <!--arquivo js/jQuery-->
+        <script type="text/javascript" src="js_jQuery.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.animacaoForm').fadeTo(0,0.0).fadeTo(15000,100)
+            })
+        </script>
+
+        <!--formatação de erro-->
+        <style>
+            .error{
+                color:red;
+                font-size: 11px;
+                font-style: italic;
+                border-top: none;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <header class="header-pags">
+            <nav class="header-menu-pags">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="animacaoForm"> <!--FORMULARIO-->
+                <form id="emprestimoFormId" class="emprestimoFormClass">
+                    <h1>Cadastro de Empréstimo</h1>
+                    <label> CPF:
+                        <input type="text" id="IDcpfEmprestimo" name="NAMEcpfEmprestimo" placeholder="xxx-xxx-xxx-xx" maxlength="14">
+                    </label> 
+                    
+                    <label> ISBN:
+                        <input type="text" id="IDinsbEmprestimo" name="NAMEinsbEmprestimo" placeholder="xxx-xx-xx-xxxxx-x" maxlength="17">
+                    </label>
+
+                    <label> Data de empréstimo:
+                        <input type="text" id="IDdataEmp" name="NAMEdataEmp" placeholder="xx/xx/xxxx" data-mask="00/00/0000">
+                    </label> 
+
+                    <label> Data de devolução:
+                        <input type="text" id="IDdataDev" name="NAMEdataDev" placeholder="xx/xx/xxxx" data-mask="00/00/0000">
+                    </label> 
+
+                    <label> Valor da multa:
+                        <input type="text" id="IDmulta" name="NAMEmulta" placeholder="valor diario da multa">
+                    </label> <br>
+                    
+                    <input id="btn-cadastrarEmprestimo" type="submit" value="Cadastrar" class="btn">
+                    <input id="btn-alterarEmprestimo" type="button" value="Alterar" />
+                    <input id="btn-excluirEmprestimo" type="button" value="Excluir" />
+                    <input id="btn-mostrarEmprestimo" type="button" value="Mostrar Um" />
+                    <input id="btn-mostrarTodosEmprestimos" type="button"  value="Mostrar Todos" />
+                </form>
+            </div>
+
+            <div><!--TABELA-->
+                <table id="tableEmpId" class="tableEmpClass">
+                    <thead>
+                        <tr id="conteudoTheadEmprestimo">
+                        </tr>
+                    </thead> 
+                    <tbody id="conteudoTbodyEmprestimo">
+
+                    </tbody>
+            
+                <tbodt>
+                        <tr></tr>
+                        
+                </tbodt>
+                </table>
+            </div>
+
+        </main>
+
+        <!--RODAPÉ-->
+        <footer class="rodape">
+            Copyright 2015
+        </footer>
+    </body>
+</html>

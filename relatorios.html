@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--arquivo js/jQuery-->
+    <script type="text/javascript" src="jQuery/jquery-3.5.1.min.js"></script>
+
+    <!--linkar o arquivo css-->
+    <link rel="stylesheet" href="style.css"> 
+
+    <title>Relatórios</title>
+</head>
+<body>
+
+    <header class="header-pags">
+        <nav class="header-menu-pags">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="animacaoForm"><!--FORMULARIO-->
+            <form id="relatorioFormId" class="relatorioFormClass">
+                <h1>Relatórios</h1>
+                    <label> <b>RELATÓRIO 1</b><br> Mostrar todos os dados de todas as pessoas com mais de <input type="text" id="IDrelatorio1" placeholder="1 ou 2" size="1"> telefones de
+                        contato.
+                    </label> <br>
+                    <button id="btn-relatorio1">Relatório 1</button><br><br><br>
+
+                    <label> <b>RELATÓRIO 2</b><br> Mostrar todos os dados de todos os livros que tenham o autor <input type="text" id="IDrelatorio2"  size="5"> em sua
+                        lista de autores.
+                    </label> <br>
+                    <button id="btn-relatorio2">Relatório 2</button><br><br><br>
+
+                    <!--
+                    <label> <b>RELATÓRIO 3</b><br>Mostrar o CPF da pessoa, o nome da pessoa, o ISBN do livro, o título do
+                        livro e todos os demais atributos dos empréstimos que possuem data de
+                        devolução entre as datas <input type="text" id="ID1relatorio3"  placeholder="xx/xx/xxxx" size="5"> e <input type="text" id="ID2relatorio3"  placeholder="xx/xx/xxxx"size="5"> em sua
+                        lista de autores.
+                    </label> <br>
+                    <button id="btn-relatorio3">Relatório 3</button>
+                    -->
+            </form>
+        </div>
+
+
+    <script>
+
+        $(document).ready(function(){
+
+            //RECUPERA ARRAY LIVROS
+            function recuperarLivros(){
+                var stringArrLivros = localStorage.getItem("arrLivros"); //recebe a chave do vetor da outra pagina
+                var arrLivros = JSON.parse(stringArrLivros); // string -> array
+
+            return arrLivros
+            }
+            var arrLivros = recuperarLivros()
+            
+            //RECUPERA ARRAY PESSOAS
+            function recuperarPessoas(){
+            var stringArrPessoas = localStorage.getItem("arrPessoas"); //recebe a chave do vetor da outra pagina
+            var arrPessoas = JSON.parse(stringArrPessoas); // string -> array
+
+            return arrPessoas
+            }
+            var arrPessoas = recuperarPessoas()
+
+            //RECUPERA ARRAY EMPRESTIMOS
+            function recuperarEmprestimos(){
+                var stringArrEmprestimos = localStorage.getItem("arrEmprestimos"); //recebe a chave do vetor da outra pagina
+                var arrEmprestimos = JSON.parse(stringArrEmprestimos); // string -> array
+
+                return arrEmprestimos
+            }
+            var arrEmprestimos = recuperarEmprestimos()
+
+            console.log(arrPessoas,arrLivros,arrEmprestimos)
+
+
+            //RELATORIO 1
+            $("#btn-relatorio1").click(function(){
+
+                //se pedir 1 telefone
+                if($("#IDrelatorio1").val() == "1"){
+                    var str =""
+                    for(i in arrPessoas){
+                        if(arrPessoas[i]["tel2"] == ""){
+                            var cpf = arrPessoas[i]["cpf"]
+                            var nome =arrPessoas[i]["nome"]
+                            var endereco = arrPessoas[i]["endereco"] 
+                            var nroCasa = arrPessoas[i]["nroCasa"]
+                            var cep = arrPessoas[i]["cep"] 
+                            var email1 = arrPessoas[i]["email1"] 
+                            var email2 = arrPessoas[i]["email2"]
+                            var tel1 = arrPessoas[i]["tel1"] 
+                            var dataNasc = arrPessoas[i]["dataNasc"] 
+                            var profissao = arrPessoas[i]["profissao"]
+                            if(arrPessoas[i]["email2"] != ""){
+                                str = "CPF: "+cpf+"\n"+"nome: "+nome+"\n"+"endereço: "+endereco+"\n"+"Numero da Casa: "+nroCasa+"\n"+"CEP: "+cep+"\n"+"Email: "+email1+", "+email2+"\n"+"Telefone: "+tel1+ "\n" +"Data de Nascimento: "+dataNasc+"\n"+"Profissão: "+profissao+"\n\n\n"
+                            } else {
+                                str = "CPF: "+cpf+"\n"+"nome: "+nome+"\n"+"endereço: "+endereco+"\n"+"Numero da Casa: "+nroCasa+"\n"+"CEP: "+cep+"\n"+"Email: "+email1+"\n"+"Telefone: "+tel1+"\n"+"Data de Nascimento: "+dataNasc+"\n"+"Profissão: "+profissao+"\n\n\n"
+                            }
+                        }
+                    }
+                    alert(str)
+                } 
+
+                //se pedir 2 telefones
+                else if ($("#IDrelatorio1").val() == "2"){
+                    var str = "" 
+                    for(i in arrPessoas){
+                        if(arrPessoas[i]["tel2"] != ""){
+                            var cpf = arrPessoas[i]["cpf"]
+                            var nome =arrPessoas[i]["nome"]
+                            var endereco = arrPessoas[i]["endereco"] 
+                            var nroCasa = arrPessoas[i]["nroCasa"]
+                            var cep = arrPessoas[i]["cep"] 
+                            var email1 = arrPessoas[i]["email1"] 
+                            var email2 = arrPessoas[i]["email2"] 
+                            var tel1 = arrPessoas[i]["tel1"] 
+                            var tel2 = arrPessoas[i]["tel2"] 
+                            var dataNasc = arrPessoas[i]["dataNasc"] 
+                            var profissao = arrPessoas[i]["profissao"]
+
+                            //se a pessoa tem 1 email ou 2
+                            if(arrPessoas[i]["email2"] != ""){
+                                str += "CPF: "+cpf+"\n"+"nome: "+nome+"\n"+"endereço: "+endereco+"\n"+"Numero da Casa: "+nroCasa+"\n"+"CEP: "+cep+"\n"+"Email: "+email1+", "+email2+"\n"+"Telefone: "+tel1+", "+tel2+ "\n" +"Data de Nascimento: "+dataNasc+"\n"+"Profissão: "+profissao+"\n\n\n"
+                            } else {
+                                str += "CPF: "+cpf+"\n"+"nome: "+nome+"\n"+"endereço: "+endereco+"\n"+"Numero da Casa: "+nroCasa+"\n"+"CEP: "+cep+"\n"+"Email: "+email1+"\n"+"Telefone: "+tel1+", "+tel2+"\n"+"Data de Nascimento: "+dataNasc+"\n"+"Profissão: "+profissao+"\n\n\n"
+                            }
+                        }
+                    }
+                    alert(str) 
+                } 
+                
+                //SE FOR MAIS QUE 2
+                else {
+                    alert("Quantidade de telefones inválidas")
+                }
+            })
+            
+            
+            $("#btn-relatorio2").click(function(){
+                var str = ""
+                for(i in arrLivros){
+                    if((arrLivros[i]["autores"]).toUpperCase() == ($("#IDrelatorio2").val()).toUpperCase()){
+                        var insb = arrLivros[i]["insb"]
+                        var titulo =arrLivros[i]["titulo"]
+                        var genero = arrLivros[i]["genero"] 
+                        var autores = arrLivros[i]["autores"]
+
+                        str += "INSB: "+insb+"\n"+"Título: "+titulo+"\n"+"Gênero: "+genero+"\n"+"Autores: "+autores+"\n\n\n"
+                    }
+                } 
+                alert(str)    
+            })
+    
+    
+        })
+    </script>
+    
+</body>
+</html>

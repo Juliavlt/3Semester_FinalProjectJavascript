@@ -1,0 +1,395 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: rgb(199, 199, 199);
+    margin: 0px;
+
+}
+
+main{
+    width: 100%;
+    margin: auto;
+}
+
+/*CABEÇALHO*/
+.header{
+    background-image: url(imagens/capa4.jpg);
+    height: 250px;
+    background-position: right center;
+    background-size: cover; /*ocupa a area inteira smsm que tire um pedaço da foto*/
+    border: 1px solid transparent; /*precisa por a borda no top pra funcionar o padding da ul*/
+}
+
+.header-content{
+    text-align: center;
+    color: white;
+}
+
+.header-content p{
+    background-color: rgba(0,0,0, 0.5);
+    display: inline-block;
+    padding: 10px;
+    border-bottom: 2px solid white;
+    margin: 0px;
+}
+
+.header-content h1{   /*formata o h1 da classe*/
+    text-transform: uppercase;
+    font-size: 40px;
+    text-shadow: 3px 3px 2px rgb(13, 53, 72); /*3px direita, 3px pra baixo, 5pz de espessura e cor*/
+
+}
+.header-content h2{
+    font-size: 10px;
+    background-color: rgba(0,0,0, 0.5);
+    display: inline-block;
+    padding: 10px;
+    border-bottom: 2px solid white;
+}
+
+ 
+/* MENU CABEÇALHO*/
+*.header-menu ul ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header-menu  li{
+    display: inline-block;
+    list-style: none;
+    border: 1px solid white;
+}
+
+.sub-menu li{
+    display: block;
+}
+
+.header-menu  a{
+    background-color: black;
+    background-color: rgba(0,0,0,0.3);
+    display: block;
+    padding: 5px;
+    color: white;
+    text-decoration: none; 
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px; 
+    width: 80px;
+    text-align: center;
+    
+}
+
+.header-menu  a:hover{
+    background-color: rgba(0,0,0,0.5);
+    display: inline-block;
+}
+
+.header-menu  ul{
+    text-align: right;
+    margin: 10px 10px 0px 0px;
+    
+}
+
+.header-menu  ul ul {
+    position: absolute;
+    visibility: hidden;
+    display: block;
+    list-style: none;
+    
+}
+
+.header-menu  ul li:hover ul{
+    visibility: visible;
+    border: 0px transparent;
+}
+/*
+.header-menu ul{
+    list-style: none;
+    position: relative;
+}
+
+.header-menu ul li{
+    width:150px;
+    float: left;
+    
+}
+
+.header-menu a{
+    margin-right: 15px;
+    padding: 15px;
+    display:block;
+    text-decoration: none;
+    text-align: right;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+
+
+.header-menu  ul li:hover ul{
+    visibility: visible;
+}
+
+.header-menu  a:hover{
+    background:;
+    color:;
+}
+
+.header-menu  ul li {
+   float:none;
+}
+
+
+
+*/
+
+
+
+
+/*--------------------------------------------PAGINAS----------------------------------------*/
+
+/*CABEÇALHO DAS PAGINAS*/
+*.header-menu-pags ul ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header-menu-pags  li{
+    display: inline-block;
+    list-style: none;
+    border: 1px solid white;
+}
+
+.sub-menu-pags li{
+    display: block;
+}
+
+.header-menu-pags  a{
+    background-color: black;
+    background-color: rgba(0,0,0,0.3);
+    display: block;
+    padding: 5px;
+    color: white;
+    text-decoration: none; 
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px; 
+    width: 80px;
+    text-align: center;
+    
+}
+
+.header-menu-pags  a:hover{
+    background-color: rgba(0,0,0,0.5);
+    display: inline-block;
+}
+
+.header-menu-pags  ul{
+    text-align: right;
+    margin: 10px 10px 0px 0px;
+    
+}
+
+.header-menu-pags  ul ul {
+    position: absolute;
+    visibility: hidden;
+    display: block;
+    list-style: none;
+    
+}
+
+.header-menu-pags  ul li:hover ul{
+    visibility: visible;
+    border: 0px transparent;
+}
+
+
+/*--------------------------------------------------------------ASIDE---------------------------------------------------*/
+
+.aside-menu nav li{
+    display: inline-block;
+    list-style: none;
+    border: 1px solid white;
+
+}
+
+.aside-menu nav a{
+    background-color: black;
+    background-color: rgba(0,0,0,0.3);
+    display: block;
+    padding: 10px 100px 10px 100px;
+    color: white;
+    text-decoration: none; 
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.aside-menu nav a:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.aside-menu nav ul{
+    text-align: center;
+    
+}
+
+/*-------------------------------------------------FORMULARIOS E TABELAS----------------------------------------------*/
+
+.tituloTabela{
+text-transform: uppercase;
+font-weight: bold
+}
+
+/*form*/
+label {
+    margin-bottom: 1px;
+    color:  black;
+    display: inline-block;
+}
+
+input{
+    margin-bottom: 15px
+}
+
+body{
+    background-color: beige;
+}
+
+/*table*/
+th{
+    background-color:beige;
+    border: 2px solid black;
+}
+
+td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/*CADASTRAMENTO DE PESSOAS*/
+/*tabela*/
+#tablePeopleId{
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 60px;
+    width: 80%;
+    box-shadow: 0px 4px 8px black;
+    border: 2px solid black;
+}
+
+/*formulario*/
+*.peopleFormClass{
+    margin: 0px;
+    padding: 0px;
+}
+.peopleFormClass h1{
+    text-align: center;
+}
+.peopleFormClass{
+    
+    display:block;  
+    box-shadow: 0px 4px 8px black;
+    padding: 10px;
+    margin: 0px auto;
+    background-color:rgb(255, 255, 255);
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+
+/*CADASTRAMENTO DE LIVROS*/
+/*tabela*/
+#tableBookId{
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 60px;
+    width: 60%;
+    box-shadow: 0px 4px 8px black;
+    border: 2px solid black;
+}
+
+/*formularioO*/            
+.bookFormClass h1{
+    text-align: center;
+}
+.bookFormClass{
+    
+    display:block;  
+    box-shadow: 0px 4px 8px black;
+    padding: 10px;
+    margin: 50px auto 0;
+    background-color:rgb(255, 255, 255);
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+
+/*CADASTRAMENTO DE EMPRESTIMOS*/
+/*tabela*/
+#tableEmpId{
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 60px;
+    width: 60%;
+    box-shadow: 0px 4px 8px black;
+    border: 2px solid black;
+}
+
+/*formulario*/
+.emprestimoFormClass h1{
+    text-align: center;
+}
+.emprestimoFormClass{
+    
+    display:block;  
+    box-shadow: 0px 4px 8px black;
+    padding: 10px;
+    margin: 50px auto 0;
+    background-color:rgb(255, 255, 255);
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+
+/*----------------------------------------------------------RODAPE--------------------------------------------------------------------------*/
+
+.rodape{
+    display: block;
+    text-align: center;
+    background-color: rgb(204, 204, 204);
+    padding: 10px;
+    width: 100%;
+    margin-top: 100%;
+}
+
+/*----------------------------------------------------------RELATORIO------------------------------------------------------------------------*/
+*.relatorioFormClass{
+    margin: 0px;
+    padding: 0px;
+}
+.relatorioFormClass h1{
+    text-align: center;
+}
+.relatorioFormClass{
+    
+    display:block;  
+    box-shadow: 0px 4px 8px black;
+    padding: 10px;
+    margin: 0px auto;
+    background-color:rgb(255, 255, 255);
+    border-radius: 2px;
+    
+    font-size: 12px;
+    width: 350px;
+    box-sizing: border-box;
+}
